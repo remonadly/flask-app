@@ -36,7 +36,7 @@ jobs:
       uses: azure/k8s-deploy@v1
       with:
         manifests: |
-            ./deployment.yaml
+            ./k8s/deployment.yaml
         images: |
             ${{ secrets.DOCKER_USERNAME }}/flask-app:2.0
 
