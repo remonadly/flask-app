@@ -66,8 +66,8 @@ jobs:
 
     - name: Deploy Prometheus
       run: |
-        helm install prometheus prometheus-community/prometheus --namespace monitoring
+        helm install prometheus ./Helm_charts/prometheus -n monitoring
 
     - name: Deploy Grafana
       run: |
-        helm install grafana grafana/grafana --namespace monitoring
+        helm install grafana ./Helm_charts/grafana -n monitoring
