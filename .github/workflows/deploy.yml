@@ -33,5 +33,10 @@ jobs:
         cluster-name: ${{ secrets.AKS_CLUSTER_NAME }}
 
     - name: Deploy to AKS
-      run: |
-        kubectl set image deployment/flask-deployment microservice=${{ secrets.DOCKER_USERNAME }}/flask-app:2.0
+      uses: azure/k8s-deploy@v1
+      with:
+        manifests: |
+            ./deployment.yaml
+        images: |
+            ${{ secrets.DOCKER_USERNAME }}/flask-app:2.0
+
