@@ -69,27 +69,32 @@ Workflow located at .github/workflows/deploy.yml automates:
     - Cloning the repo
     - Docker build & dockerhub push (remonadly/flask-app:latest)
     - Terraform provisioning (in case deploying infrastructure from scratsh, DR situation for example)
-    - AKS deployment using azure/k8s-deploy
+    - App deployment using azure/k8s-deploy
     - Helm install of Prometheus and Grafana (in case deploying infrastructure from scratsh, DR situation for example)
 
 Note: 
     All the hashed lines in the workflow code should be enabled and used only when deploying everything from scratsh including the infrastructure and monitoring stack. And should be hashed when updating only the application deployed on AKS.
 
     A ServicePrincipal was created, assumed a contributor role and its json was placed as a secret in Github actions for the authentication/Integration between GitHub actions and Azure.
+        - az ad sp create-for-rbac --name gh-actions-sp --role Contributor --scopes "/subscriptions/Subscription-ID" --sdk-auth
     
     A Docker Access Token should provided for the authentication/Integration between GitHub actions and Docker hub.
 _______________________________________________________________________________________________________________
 📊 Monitoring Stack
 
 Monitoring stack was deployed in "monitoring" name space
-    Deployed Prometheus Helm charts internally.
-    Modified and deployed Grafana Helm charts to be exposed by a Loadbalancer service for external access.
+    Deployed Prometheus Helm chart internally.
+    Modified Grafana Helm chart values.yaml file so grafana could be exposed by a Loadbalancer service instead of clusterIP internal service for external access, then deployed it.
+    
+    Commands used with helm to install
+        - helm install prometheus ./Helm_charts/prometheus -n monitoring
+        - helm install grafana ./Helm_charts/grafana -n monitoring
 
 Note
-    Both charts can be modified as needed from the values.yaml file
+    Both charts can be modified as needed from the values.yaml file.
 
 Prometheus
-    Prometheus added as data source in grafana with below URL:
+    Prometheus added as data source in grafana (through grafana portal) with below URL:
         http://prometheus-server.monitoring.svc.cluster.local
 
 Grafana Exposed via LoadBalancer
@@ -107,7 +112,7 @@ To get grafana admin password:
     Password: oaIsOKNUYR39Fmvgp8yXhdQbtutNtUJM733MWcAY
 
 Note: 
-    Two standard dashboards, predefined by Grafana Labs, were imported and used in our Grafana instance to monitor our solution. However, dashboards can be created and customized locally according to business needs and must be deployed in an IAC manner using the K8s CRDs, CRs, and K8s operator.
+    Two standard dashboards, predefined by Grafana Labs, were imported (through grafana portal) and used in our Grafana instance to monitor our solution. However, dashboards can be created and customized locally according to business needs and must be deployed in an IAC manner using the K8s CRDs, CRs, and K8s operator.
 
     Imported dashboards IDs:
         ID: 315   "Kubernetes cluster monitoring (via Prometheus)"
