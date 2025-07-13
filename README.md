@@ -1,7 +1,6 @@
  Microservices DevOps Project: Flask App on AKS
 
- All screenshots provided in Screenshots/ folder
- All links provided at the end of this file
+ All screenshots provided in Screenshots/ folder, and all links provided at the end of this file
 
 ---
  Project Objectives
