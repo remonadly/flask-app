@@ -31,17 +31,17 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-#    - name: Terraform Init
-#      working-directory: ./terraform
-#      run: terraform init
+    - name: Terraform Init
+      working-directory: ./terraform
+      run: terraform init
 
-#    - name: Terraform Plan
-#      working-directory: ./terraform
-#      run: terraform plan
+    - name: Terraform Plan
+      working-directory: ./terraform
+      run: terraform plan
 
-#    - name: Terraform Apply
-#      working-directory: ./terraform
-#      run: terraform apply -auto-approve || true
+    - name: Terraform Apply
+      working-directory: ./terraform
+      run: terraform apply -auto-approve || true
 
     - name: Set AKS context
       uses: azure/aks-set-context@v3
@@ -55,7 +55,7 @@ jobs:
         manifests: |
             ./k8s/deployment.yaml
             ./k8s/namespace.yaml
- #           ./k8s/service.yaml
+            ./k8s/service.yaml
         images: |
             ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
 
