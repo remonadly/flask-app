@@ -1,7 +1,7 @@
  Microservices DevOps Project: Flask App on AKS
 
-## All screenshots provided in Screenshots/ folder
-## All links provided at the end of this file
+ All screenshots provided in Screenshots/ folder
+ All links provided at the end of this file
 
 This project demonstrates containerizing a Python Flask microservice, deploying it to an Azure Kubernetes Service (AKS) cluster provisioned via Terraform, automating CI/CD with GitHub Actions, and monitoring it using Prometheus and Grafana.
 ---
