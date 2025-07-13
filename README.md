@@ -172,24 +172,9 @@ Screenshots & links:
     - Grafana Login:
         user:admin 
         Password: oaIsOKNUYR39Fmvgp8yXhdQbtutNtUJM733MWcAY
-    
-![Application](https://raw.githubusercontent.com/remonadly/flask-app/main/Screenshots/application.PNG)
-
+![Alt text](Screenshots/application.PNG)
 ![Alt text](Screenshots/nodes.PNG)
 ![Alt text](Screenshots/pod.PNG)
 ![Alt text](Screenshots/pods2.PNG)
 ![Alt text](Screenshots/svc.PNG)
 ![Alt text](Screenshots/svc2.PNG)
-
-![alt text](image.png)
-
-
-
-
-
-
-
-
-
-
-
