@@ -29,6 +29,8 @@ jobs:
         docker build -t ${{ secrets.DOCKER_USERNAME }}/flask-app:latest .
         docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
 
+# we need to engage sort of dynamic tagging in the build and push process, it is set here as :latest for demo purposes
+
     - name: Azure Login
       uses: azure/login@v1
       with:
