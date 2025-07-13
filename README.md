@@ -174,15 +174,10 @@ Screenshots & links:
         Password: oaIsOKNUYR39Fmvgp8yXhdQbtutNtUJM733MWcAY
     
 ![Alt text](Screenshots/application.png)
-
 ![Alt text](Screenshots/nodes.png)
-
 ![Alt text](Screenshots/pod.png)
-
 ![Alt text](Screenshots/pods2.png)
-
 ![Alt text](Screenshots/svc.png)
-
 ![Alt text](Screenshots/svc2.png)
 
 
