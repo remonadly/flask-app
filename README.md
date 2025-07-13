@@ -3,7 +3,7 @@
  All screenshots provided in Screenshots/ folder
  All links provided at the end of this file
 
-This project demonstrates containerizing a Python Flask microservice, deploying it to an Azure Kubernetes Service (AKS) cluster provisioned via Terraform, automating CI/CD with GitHub Actions, and monitoring it using Prometheus and Grafana.
+ This project demonstrates containerizing a Python Flask microservice, deploying it to an Azure Kubernetes Service (AKS) cluster provisioned via Terraform, automating CI/CD with GitHub Actions, and monitoring it using Prometheus and Grafana.
 ---
  Project Objectives
  - Dockerize** the Flask app (`run.py`)  
@@ -14,7 +14,7 @@ This project demonstrates containerizing a Python Flask microservice, deploying 
  - Monitor** the app and cluster via Prometheus & Grafana
 ---
  Application Overview
-A simple Flask-based microservice that listens on port **5000**, with an endpoint defined in `run.py`.
+    A simple Flask-based microservice that listens on port **5000**, with an endpoint defined in `run.py`.
 ---
  Dockerization
 Multi-stage Dockerfile to ensure a clean and minimal image:
