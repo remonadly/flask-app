@@ -149,3 +149,5 @@ ________________________________________________________________________________
     - Grafana Login:
         user:admin 
         Password: oaIsOKNUYR39Fmvgp8yXhdQbtutNtUJM733MWcAY
+        
+    - Dashboard link: http://74.179.225.105/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-DS_PROMETHEUS=berso8z8pws8we&var-job=kubernetes-service-endpoints&var-nodename=aks-default-39897011-vmss000000&var-node=10.224.0.5:9100&var-diskdevices=%5Ba-z%5D%2B%7Cnvme%5B0-9%5D%2Bn%5B0-9%5D%2B%7Cmmcblk%5B0-9%5D%2B&refresh=1m
