@@ -1,23 +1,25 @@
-# 🚀 Microservices DevOps Project: Flask App on AKS
+# Microservices DevOps Project: Flask App on AKS
 
-## All screenshots and links provided at the end of this file
+# All screenshots provided in Screenshots/ folder
+# All links provided at the end of this file
+
 
 This project demonstrates containerizing a Python Flask microservice, deploying it to an Azure Kubernetes Service (AKS) cluster provisioned via Terraform, automating CI/CD with GitHub Actions, and monitoring it using Prometheus and Grafana.
 ---
-## 📋 Project Objectives
+* Project Objectives
 
- **Dockerize** the Flask app (`run.py`)  
- **Provision** an AKS cluster using Terraform  
- **Deploy** the microservice via Kubernetes manifests  
- **Expose** the service externally using a LoadBalancer  
- **Automate CI/CD** using GitHub Actions  
- **Monitor** the app and cluster via Prometheus & Grafana
+ - Dockerize** the Flask app (`run.py`)  
+ - Provision** an AKS cluster using Terraform  
+ - Deploy** the microservice via Kubernetes manifests  
+ - Expose** the service externally using a LoadBalancer  
+ - Automate CI/CD** using GitHub Actions  
+ - Monitor** the app and cluster via Prometheus & Grafana
 ---
-## 🐍 Application Overview
+* Application Overview
 
 A simple Flask-based microservice that listens on port **5000**, with an endpoint defined in `run.py`.
 ---
-## 🐳 Dockerization
+* Dockerization
 
 Multi-stage Dockerfile to ensure a clean and minimal image:
 
@@ -123,16 +125,6 @@ Note:
     Imported dashboards IDs:
         ID: 315   "Kubernetes cluster monitoring (via Prometheus)"
         ID: 1860  "Node Exporter Full"
-    
-           ![Alt text](Screenshots/Dashboards.png) 
-
-    Kubernetes cluster monitoring Dashboard:
-
-            ![Alt text](Screenshots/K8s-cluster-dashboard.png)    
-
-    Node Exporter Full dashboard
-            
-            ![Alt text](Screenshots/Node-Exporter-Full.png) 
 
 link to get any predefined standard Grafana dashboards : https://grafana.com/grafana/dashboards/
 _______________________________________________________________________________________________________________
@@ -157,6 +149,7 @@ ________________________________________________________________________________
 ├── Helm_charts/
 │   ├── prometheus/
 │   └── grafana/
+├── Screenshots/
 ├── run.py
 ├── requirements.txt
 ├── Dockerfile
@@ -172,9 +165,3 @@ Screenshots & links:
     - Grafana Login:
         user:admin 
         Password: oaIsOKNUYR39Fmvgp8yXhdQbtutNtUJM733MWcAY
-![Alt text](Screenshots/application.PNG)
-![Alt text](Screenshots/nodes.PNG)
-![Alt text](Screenshots/pod.PNG)
-![Alt text](Screenshots/pods2.PNG)
-![Alt text](Screenshots/svc.PNG)
-![Alt text](Screenshots/svc2.PNG)
