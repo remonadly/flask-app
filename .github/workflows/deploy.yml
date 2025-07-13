@@ -1,3 +1,6 @@
+# All the hashed lines should be enabled and used only when deploying everything including the infrastructure from scratsh
+# and should be hashed when updating only the application deployed on AKS.
+
 name: Build and Deploy to AKS
 
 on:
@@ -31,17 +34,17 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Terraform Init
-      working-directory: ./terraform
-      run: terraform init
+#    - name: Terraform Init
+#      working-directory: ./terraform
+#      run: terraform init
 
-    - name: Terraform Plan
-      working-directory: ./terraform
-      run: terraform plan
+#    - name: Terraform Plan
+#      working-directory: ./terraform
+#      run: terraform plan
 
-    - name: Terraform Apply
-      working-directory: ./terraform
-      run: terraform apply -auto-approve || true
+#    - name: Terraform Apply
+#      working-directory: ./terraform
+#      run: terraform apply -auto-approve || true
 
     - name: Set AKS context
       uses: azure/aks-set-context@v3
@@ -54,8 +57,8 @@ jobs:
       with:
         manifests: |
             ./k8s/deployment.yaml
-            ./k8s/namespace.yaml
-            ./k8s/service.yaml
+#            ./k8s/namespace.yaml
+#            ./k8s/service.yaml
         images: |
             ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
 
@@ -64,10 +67,10 @@ jobs:
       with:
         version: v3.12.3
 
-    - name: Deploy Prometheus
-      run: |
-        helm install prometheus ./Helm_charts/prometheus -n monitoring
+#    - name: Deploy Prometheus
+#      run: |
+#        helm install prometheus ./Helm_charts/prometheus -n monitoring
 
-    - name: Deploy Grafana
-      run: |
-        helm install grafana ./Helm_charts/grafana -n monitoring
+#    - name: Deploy Grafana
+#      run: |
+#        helm install grafana ./Helm_charts/grafana -n monitoring
