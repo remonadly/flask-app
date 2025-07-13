@@ -173,7 +173,8 @@ Screenshots & links:
         user:admin 
         Password: oaIsOKNUYR39Fmvgp8yXhdQbtutNtUJM733MWcAY
     
-![Alt text](Screenshots/application.PNG)
+![Application](https://raw.githubusercontent.com/remonadly/flask-app/main/Screenshots/application.PNG)
+
 ![Alt text](Screenshots/nodes.PNG)
 ![Alt text](Screenshots/pod.PNG)
 ![Alt text](Screenshots/pods2.PNG)
