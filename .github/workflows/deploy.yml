@@ -48,6 +48,8 @@ jobs:
 #      working-directory: ./terraform
 #      run: terraform apply -auto-approve || true
 
+#### A backend block should be added to terraform code to contain the state file
+
     - name: Set AKS context
       uses: azure/aks-set-context@v3
       with:
